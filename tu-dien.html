@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="seach" type="text">
+<button onclick="translaterWorld()">translaterWorld</button>
+<p id="result"></p>
+</body>
+</html>
+<script>
+    function translaterWorld() {
+        let seach = document.getElementById("seach").value
+        let vn = ["táo", "cam", "xoài", "chanh"]
+        let eng = ["apple", "orange", "mango", "lemon"]
+        let flag = false
+        for (let i=0 ; i < eng.length; i++) {
+            if (seach===eng[i]) {
+                document.getElementById("result").innerHTML = vn[i]
+                flag = true
+                break
+            }
+            if (seach===vn[i]) {
+                document.getElementById("result").innerHTML = eng[i]
+                flag = true
+                break
+            }
+
+        }
+        if (!flag) {
+            document.getElementById("result").innerHTML = "không tìm thấy"
+        }
+    }
+</script>
